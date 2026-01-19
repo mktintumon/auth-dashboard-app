@@ -17,7 +17,7 @@
 
 - Unauthenticated users are redirected to the login page
 - Authentication state handled centrally using React Context
-NOTE :  Redux not used as the application has limited global state (auth + dashboard data). 
+- NOTE :  Redux not used as the application has limited global state (auth + dashboard data). 
         React Context provides a simpler, cleaner solution without unnecessary boilerplate.
 
 4. Error & Loading Handling
@@ -36,33 +36,26 @@ Tech Stack
 
 
 
-# Project Structure
+## Responsibility Flow
 
-src/
-│── api/
-│   └── axiosInstance.js
-│
-│── auth/
-│   ├── AuthContext.jsx
-│   └── ProtectedRoute.jsx
-│
-│── components/
-│   ├── Loader.jsx
-│   ├── Error.jsx
-│
-│── pages/
-│   ├── Login.jsx
-│   ├── Login.css
-│   ├── Dashboard.jsx
-│   ├── Dashboard.css
-│
-│── App.jsx
-│── main.jsx
-│── index.css
-|── .env
+UI Layer
+- pages/Login.jsx
+- pages/Dashboard.jsx
+
+State & Auth Layer
+- auth/AuthContext.jsx
+- auth/ProtectedRoute.jsx
+
+API Layer
+- api/axiosInstance.js
+
+Reusable Components
+- components/Loader.jsx
+- components/Error.jsx
 
 
-# Note: .env is NOT intentionally ignored in Git.
+
+# Note - .env is NOT intentionally ignored in Git.
 
 
 # Login Details
