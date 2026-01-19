@@ -1,16 +1,74 @@
-# React + Vite
+# Features
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+1. Login (Mocked Authentication)
 
-Currently, two official plugins are available:
+- Login form with username and password
+- Frontend-mocked authentication (no backend required)
+- Token stored in localStorage
+- Basic token expiry handling
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+2. Protected Dashboard
 
-## React Compiler
+- Dashboard accessible only after login
+- Fetches and displays user data from a public API
+- Logout functionality clears token and redirects to login
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+3. Route Protection
 
-## Expanding the ESLint configuration
+- Unauthenticated users are redirected to the login page
+- Authentication state handled centrally using React Context
+NOTE :  Redux not used as the application has limited global state (auth + dashboard data). 
+        React Context provides a simpler, cleaner solution without unnecessary boilerplate.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+4. Error & Loading Handling
+
+- Loader displayed during API calls
+- Graceful error handling
+- User-friendly error messages
+- Retry option for failed API calls
+
+Tech Stack
+
+- React (Vite)
+- React Router v6
+- Axios
+- CSS (no UI framework)
+
+
+
+# Project Structure
+
+src/
+│── api/
+│   └── axiosInstance.js
+│
+│── auth/
+│   ├── AuthContext.jsx
+│   └── ProtectedRoute.jsx
+│
+│── components/
+│   ├── Loader.jsx
+│   ├── Error.jsx
+│
+│── pages/
+│   ├── Login.jsx
+│   ├── Login.css
+│   ├── Dashboard.jsx
+│   ├── Dashboard.css
+│
+│── App.jsx
+│── main.jsx
+│── index.css
+|── .env
+
+
+# Note: .env is NOT intentionally ignored in Git.
+
+
+# Login Details
+
+- Since no real authentication backend is required, login is mocked on the frontend.
+- A dummy token is stored in localStorage
+- Token expiry is simulated (1 hour)
+- Demo credentials
+   - Username: mor_2314 and Password: 83r5^_
