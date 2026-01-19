@@ -55,7 +55,7 @@ Reusable Components
 
 
 
-# Note - .env is NOT intentionally ignored in Git.
+## Note - .env is intentionally NOT ignored in Git.
 
 
 # Login Details
