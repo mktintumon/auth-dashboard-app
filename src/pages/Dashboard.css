@@ -1,0 +1,40 @@
+.dashboard-container {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 20px;
+}
+
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.dashboard-header h2 {
+  margin: 0;
+}
+
+.logout-btn {
+  padding: 8px 14px;
+  background-color: #eb3b5a;
+  color: white;
+  border: none;
+  border-radius: 4px;
+}
+
+.user-list {
+  list-style: none;
+}
+
+.user-card {
+  background: #ffffff;
+  padding: 14px;
+  margin-bottom: 12px;
+  border-radius: 6px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+.user-card p {
+  margin: 4px 0;
+}
